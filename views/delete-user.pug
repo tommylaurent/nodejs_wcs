@@ -1,5 +1,6 @@
 extends layout
 
 block content
-    form(method='POST', action='/users/:name?_method=DELETE')
+    form(method='POST', action=`/users/${id}?_method=DELETE`)
+        input(class="form-control", pattern=`.{1,}`, required='required', name='id')
         button(type='submit') DELETE

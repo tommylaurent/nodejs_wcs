@@ -26,7 +26,6 @@ router.get("/", function(req, res, next) {
 
 /* Route GET Affiche le formulaire Update */
 router.get("/:name(\\D+)", (req, res, next) => {
-  //res.send(`Hey my name is ${req.params.name}`);
   res.render("update-user");
 });
 
@@ -35,14 +34,14 @@ router.put("/:name(\\D+)", (req, res, next) => {
   res.send(`The new name is ${req.body.name}`);
 });
 
-// /* Route GET Affiche le formulaire Delete */
-// router.get("/users/", function(req, res, next) {
-//   res.send("respond with a resource");
-// });
-
 // /* Route DELETE Affiche le formulaire Delete */
-// router.delete("/users/", function(req, res, next) {
-//   res.send("respond with a resource");
-// });
+router.get("/:id(\\d+)", (req, res, next) => {
+  res.render("delete-user");
+});
+
+/* Route DELETE Affiche le formulaire Delete */
+router.delete("/:id", (req, res, next) => {
+  res.send(`No more user with id ${req.body.id}`);
+});
 
 module.exports = router;
