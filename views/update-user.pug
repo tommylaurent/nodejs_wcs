@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    form(method='POST', action=`/users/${name}?_method=PUT`)
+        input(class="form-control", required='required', pattern=`.{3,}`, name="name", placeholder=`Le Titre`, value="bob")
+        button(type='submit') Modifier
